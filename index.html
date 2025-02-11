@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Portfolio</title>
+    <link rel="icon" type="image-png" href="mainicon.webp"/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .head-1 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: #252526;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        
+        }
+        .header-heading-1 {
+            font-size: 36px;
+            color: #bb86fc;
+            font-weight: bold;
+        }
+
+        .header-nav {
+            display: flex;
+            gap: 84px;
+            list-style: none;
+            margin-right:72px;
+        }
+
+        .header-nav li a {
+            font-size: 18px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .header-nav li a:hover {
+            color: #bb86fc;
+        }
+        .hamburger {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .head-part-2 {
+            padding: 80px 40px;
+            text-align: center;
+            background-color: #2d2d2d;
+        }
+        .header-body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .header-text-box {
+            max-width: 600px;
+            text-align: left;
+        }
+        .h-p-1 {
+            font-size: 18px;
+            color: #bb86fc;
+            margin-bottom: 10px;
+        }
+        .h-name {
+            font-size: 48px;
+            color: #e0e0e0;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .n-1 {
+            color: #bb86fc;
+        }
+        .head-p {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+        .head-link, .head-link-2 {
+            display: inline-block;
+            padding: 12px 24px;
+            margin: 10px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .head-link {
+            background-color: #bb86fc;
+            color: #1e1e1e;   
+        }
+        .head-link-2 {
+            background-color: transparent;
+            color: #bb86fc;
+            border: 2px solid #bb86fc;
+        }
+        .head-link:hover, .head-link-2:hover {
+            background-color: #9a67ea;
+            color: #1e1e1e;
+            transform: translateY(-4px);
+        }
+        .head-icon-p {
+            margin-top: 20px;
+            color: #a0a0a0;
+        }
+        .h-icon {
+            font-size: 24px;
+            margin: 0 10px;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        .h-icon:hover {
+            color: #bb86fc;
+        }
+        .header-image-box {
+            max-width: 500px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .image-h {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        @media (min-width: 768px) {
+            .header-body {
+                flex-direction: row;
+                justify-content: space-between;
+                text-align: left;
+            }
+            .header-text-box {
+                text-align: left;
+            }
+        }
+        @media (max-width: 767px) {
+            .header-nav {
+                display: none;
+                flex-direction: column;
+                gap: 10px;
+                position: absolute;
+                top: 80px;
+                right: 20px;
+                background-color: #252526;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+            .header-nav.active {
+                display: flex;
+            }
+            .hamburger {
+                display: block;
+            }
+            .header-image-box {
+                display: none;
+            }
+            .h-name {
+                font-size: 36px;
+            }
+            .head-p {
+                font-size: 16px;
+            }
+            .head-link, .head-link-2 {
+                width: 100%;
+                margin: 10px 0;
+            }
+        }
+.section-about {
+    padding: 80px 40px;
+    background-color: #2d2d2d;
+    text-align: center;
+}
+.about-p {
+    font-size: 32px;
+    color: #bb86fc;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+.h-1 {
+    color: #e0e0e0;
+}
+.about-s {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.about-image {
+    max-width: 400px;
+    margin: 0 auto;
+}
+.about-i {
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.about-text {
+    text-align: left;
+}
+.about-heading {
+    font-size: 36px;
+    color: #e0e0e0;
+    margin-bottom: 10px;
+}
+
+.about-s-h {
+    font-size: 18px;
+    color: #bb86fc;
+    margin-bottom: 20px;
+}
+
+.about-paragraph {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #a0a0a0;
+    margin-bottom: 20px;
+}
+
+.about-mail {
+    font-size: 18px;
+    color: #bb86fc;
+    margin-bottom: 10px;
+}
+
+.about-link {
+    font-size: 16px;
+    color: #e0e0e0;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.about-link:hover {
+    color: #bb86fc;
+}
+
+.about-h {
+    font-size: 24px;
+    color: #bb86fc;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.about-p-2 {
+    font-size: 16px;
+    color: #a0a0a0;
+}
+
+
+@media (min-width: 768px) {
+    .about-s {
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+    }
+
+    .about-image {
+        max-width: 400px;
+    }
+
+    .about-text {
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 767px) {
+    .about-p {
+        font-size: 28px;
+    }
+
+    .about-heading {
+        font-size: 28px;
+    }
+
+    .about-s-h {
+        font-size: 16px;
+    }
+
+    .about-paragraph {
+        font-size: 14px;
+    }
+
+    .about-mail {
+        font-size: 16px;
+    }
+
+    .about-link {
+        font-size: 14px;
+    }
+
+    .about-h {
+        font-size: 20px;
+    }
+
+    .about-p-2 {
+        font-size: 14px;
+    }
+}
+
+.Services-s {
+    padding: 80px 40px;
+    background-color: #1e1e1e;
+    text-align: center;
+}
+
+.about-p {
+    font-size: 32px;
+    color: #bb86fc;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+.h-1 {
+    color: #e0e0e0;
+}
+
+.section-services {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.box-1, .box-2, .box-3 {
+    background-color: #252526;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+}
+
+.box-1:hover, .box-2:hover, .box-3:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.icon-s {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+    color: #bb86fc;
+}
+
+.b-t-1 {
+    font-size: 24px;
+    color: #e0e0e0;
+    margin-bottom: 15px;
+}
+
+.b-p-1 {
+    font-size: 16px;
+    color: #a0a0a0;
+    line-height: 1.6;
+}
+@media (max-width: 768px) {
+    .section-services {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .box-1, .box-2, .box-3 {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .about-p {
+        font-size: 28px;
+    }
+
+    .b-t-1 {
+        font-size: 22px;
+    }
+
+    .b-p-1 {
+        font-size: 14px;
+    }
+}
+.skil-section {
+    padding: 80px 40px;
+    background-color: #2d2d2d;
+    text-align: center;
+}
+
+.about-s-2 {
+    font-size: 32px;
+    color: #bb86fc;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+.h-1 {
+    color: #e0e0e0;
+}
+
+.skill-box {
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.skills-container {
+    width: 100%;
+    max-width: 500px;
+}
+
+.skill {
+    margin-bottom: 20px;
+}
+
+.subject {
+    font-size: 18px;
+    color: #e0e0e0;
+    margin-bottom: 10px;
+}
+
+.progress-bar {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    height: 10px;
+    overflow: hidden;
+    margin-bottom: 42px;
+}
+
+.progress-line {
+    background-color: #bb86fc;
+    height: 100%;
+    border-radius: 8px;
+    transition: width 0.5s ease;
+}
+@media (max-width: 768px) {
+    .skill-box {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-s-2 {
+        font-size: 28px;
+    }
+
+    .subject {
+        font-size: 16px;
+    }
+}
+.contact-section {
+    padding: 80px 40px;
+    background-color: #1e1e1e;
+    text-align: center;
+}
+
+.about-p-c {
+    font-size: 32px;
+    color: #bb86fc;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+.h-1 {
+    color: #e0e0e0;
+}
+
+.contact-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+    gap: 40px;
+}
+
+.contact-box-2 {
+    text-align: left;
+}
+
+.h-b-1 {
+    font-size: 48px;
+    color: #e0e0e0;
+    line-height: 1.4;
+}
+
+.contact-box-1 {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.head-link-1, .head-link-3 {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.head-link-1 {
+    background-color: #bb86fc;
+    color: #1e1e1e;
+}
+
+.head-link-3 {
+    background-color: transparent;
+    color: #bb86fc;
+    border: 2px solid #bb86fc;
+}
+
+.head-link-1:hover {
+    background-color: #9a67ea;
+    transform: translateY(-4px);
+}
+
+.head-link-3:hover {
+    background-color: #bb86fc;
+    color: #1e1e1e;
+    transform: translateY(-4px);
+}
+@media (max-width: 768px) {
+    .contact-box {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .h-b-1 {
+        font-size: 36px;
+        text-align: center;
+    }
+
+    .contact-box-1 {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .about-p-c {
+        font-size: 28px;
+    }
+}
+.section-footer {
+    padding: 80px 40px;
+    background-color: #252526;
+    color: #e0e0e0;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header-heading-1 {
+    font-size: 28px;
+    color: #bb86fc;
+    margin-bottom: 20px;
+}
+
+.headin-g {
+    color: #e0e0e0;
+}
+
+.head-icon-p-2 {
+    margin-bottom: 20px;
+}
+
+.h-icon {
+    font-size: 24px;
+    margin: 0 10px;
+    color: #bb86fc;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.h-icon:hover {
+    color: #9a67ea;
+}
+
+.footer-text {
+    font-size: 16px;
+    color: #a0a0a0;
+    line-height: 1.6;
+}
+
+.footer-h, .footer-h-2 {
+    font-size: 20px;
+    color: #bb86fc;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.footer-t {
+    font-size: 16px;
+    color: #a0a0a0;
+    line-height: 1.8;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 20px;
+}
+.footer-t-2 {
+    font-size: 16px;
+    color: #a0a0a0;
+    line-height: 1.8;
+    text-decoration: none;
+    display: block;
+    margin-bottom: -5px;
+}
+.footer-t-2:hover {
+    color: #bb86fc;
+}
+
+.footer-icon {
+    width: 24px;
+    height: 24px;
+    color: #bb86fc;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.icon-t {
+    display: inline-block;
+    font-size: 16px;
+    color: #a0a0a0;
+    vertical-align: middle;
+    margin-bottom: 20px;
+    margin-top: 24px;
+}
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .header-heading-1 {
+        font-size: 24px;
+    }
+
+    .footer-h, .footer-h-2 {
+        font-size: 18px;
+    }
+
+    .footer-t, .footer-t-2 {
+        font-size: 14px;
+    }
+
+    .icon-t {
+        font-size: 14px;
+        margin-top: 16px;
+       
+    }
+}
+.all-rights {
+    text-align: center;
+    padding: 20px;
+    background-color: #1e1e1e;
+    border-top: 1px solid #333;
+    margin-top: 40px;
+}
+
+.rights-text {
+    font-size: 14px;
+    color: #a0a0a0;
+    margin: 0;
+}
+    </style>
+</head>
+<body>
+    <div id="my-home">  
+        <header class="head-1">
+            <h1 class="header-heading-1">Port<span class="headin-g">folio</span></h1> 
+            <div class="hamburger" onclick="toggleNav()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="header-nav" id="headerNav">
+                <li><a class="nav-link" href="#my-home">Home</a></li>
+                <li><a class="nav-link" href="#about-me">About</a></li>
+                <li><a class="nav-link" href="#my-contact">Contact</a></li>
+                <li><a class="nav-link" href="#my-skill">Skill</a></li>
+                <li><a class="nav-link" href="#my-services">Services</a></li>
+            </ul>
+        </header>
+
+        <section class="head-part-2">
+            <div class="header-body">
+                <div class="header-text-box">
+                    <p class="h-p-1">Hello There! <br></p>
+                    <span class="h-name">I'm <span class="n-1">Muhammad Qasim,</span><br>Frontend Developer.</span>
+                    <p class="head-p">Welcome to my corner of the web! I'm Muhammad Qasim, a passionate Mobile App Developer with a love for building user-friendly apps. I'm on a journey to transform ideas into seamless, engaging, and impactful mobile experiences.</p>
+                    <section>
+                        <p class="head-icon-p">
+                            <span class="icon-par">Follow Me </span>
+                            <a href="https://www.facebook.com/share/1AuPANXpeZ/" target="_blank">
+                                <i class="h-icon fab fa-facebook"></i>
+                            </a>
+                            <a href="https://www.instagram.com/m.qasim_waheed?igsh=ZDhiNXFwM3RjajBz" target="_blank">
+                                <i class="h-icon fab fa-instagram"></i>
+                            </a>
+                            <a href="https://x.com/Qasimwa69183452?t=wgonm6bvfrxXdvW1FfpW9A&s=09" target="_blank">
+                                <i class="h-icon fab fa-twitter"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/muhammad-qasim-80a7aa28b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
+                                <i class="h-icon fab fa-linkedin"></i>
+                            </a>
+                        </p>
+                    </section>
+                    <a class="head-link" href="#my-contact">Contact Me</a>
+                    <a class="head-link-2" href="#">Download CV</a>
+                </div>
+                <div class="header-image-box">
+                    <figure class="header-image">
+                        <img class="image-h" src="10193074.webp" alt="Profile Image">
+                    </figure>
+                </div>
+            </div>
+        </section>
+    </div>
+</div> 
+<div id="about-me">
+    <section class="section-about">
+        <p class="about-p"><span class="h-1">ABOUT</span> ME</p>
+        <div class="about-s container-1200 grid-2colon-2">
+            <div class="about-image">
+                <figure class="about-image-s">
+                    <img class="about-i" src="10193070.webp" alt="About Image">
+                </figure>
+            </div>
+            <div class="about-text">
+                <h2 class="about-heading">Muhammad Qasim</h2>
+                <p class="about-s-h">A Frontend Developer</p>
+                <p class="about-paragraph">
+                    I'm on a journey to turn ideas into engaging digital experiences and innovative solutions. My passion for development started early, driven by curiosity and a desire to create impactful solutions. What began as a hobby has grown into a commitment to excellence in mobile app development.
+                </p>
+                <p class="about-mail">Email Me</p>
+                <a class="about-link" href="mailto:qasimwaheed987@gmail.com">qasimwaheed987@gmail.com</a>
+                <h3 class="about-h">SKILL</h3>
+                <p class="about-p-2">HTML | CSS | JavaScript | React | React Native | Firebase | Node.js</p>
+            </div>
+        </div>
+    </section>
+</div>
+<div id="my-services">
+    <section class="Services-s">
+        <p class="about-p"><span class="h-1">Services</span></p>
+        <div class="section-services container grid-3colon">
+            <div class="box-1">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon-s">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" />
+                </svg>
+                <h2 class="b-t-1">UI/UX Design</h2>
+                <p class="b-p-1">I design visually appealing and user-friendly interfaces that go beyond meeting user expectations and provide a seamless experience.</p>
+            </div>
+            <div class="box-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon-s">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
+                </svg>
+                <h2 class="b-t-1">App Development</h2>
+                <p class="b-p-1">I develop scalable, high-performance apps, whether it's a simple tool or a complex platform, ensuring efficient and optimized code.</p>
+            </div>
+            <div class="box-3">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon-s">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z" />
+                </svg>
+                <h2 class="b-t-1">Web Development</h2>
+                <p class="b-p-1">I create responsive websites compatible with various devices and browsers, ensuring a seamless user experience and better engagement.</p>
+            </div>
+        </div>
+    </section>
+</div>
+<div id="my-skill">
+    <section class="skil-section">
+        <p class="about-s-2"><span class="h-1">Skill</span></p>
+        <div class="skill-box container grid-3colon-2">
+            <div class="skills-container">
+                <div class="skill">
+                    <div class="subject">HTML</div>
+                    <div class="progress-bar" value="94%">
+                        <div class="progress-line" style="max-width: 94%;"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="subject">CSS</div>
+                    <div class="progress-bar" value="80%">
+                        <div class="progress-line" style="max-width: 80%;"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="subject">Javascript</div>
+                    <div class="progress-bar" value="80%">
+                        <div class="progress-line" style="max-width: 60%;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="skills-container">
+                <div class="skill">
+                    <div class="subject">React</div>
+                    <div class="progress-bar" value="94%">
+                        <div class="progress-line" style="max-width: 94%;"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="subject">React Native </div>
+                    <div class="progress-bar" value="80%">
+                        <div class="progress-line" style="max-width: 80%;"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="subject">Node.js</div>
+                    <div class="progress-bar" value="60%">
+                        <div class="progress-line" style="max-width: 60%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<div id="my-contact">
+    <section class="contact-section">
+        <p class="about-p-c"><span class="h-1">Contact</span> ME</p>
+        <div class="contact-box container-3 grid-1colon">
+            <div class="contact-box-2">
+                <h2 class="h-b-1">Interested <br>Working<br>With me?</h2>
+            </div>
+            <div class="contact-box-1">
+                <a class="head-link-1" href="mailto:qasimwaheed987@gmail.com?subject=Let's%20Connect%20Muhammad%20Qasim&body=Hi%20Muhammad%20Qasim,%0D%0A%0D%0AI%20came%20across%20your%20portfolio%20and%20would%20love%20to%20connect%20with%20you%20regarding%20your%20skills%20as%20a%20Frontend%20Developer.%0D%0A%0D%0ARegards," target="_blank">Send Mail</a>
+                <span class="d-link">
+                    <a class="head-link-3" href="#">Download CV</a>
+                </span>
+            </div>
+        </div>
+    </section>
+</div>
+<div>
+    <section class="section-footer">
+        <div class="footer container footer-grid">
+            <div>
+                <h1 class="header-heading-1">Port<span class="headin-g">folio</span></h1>
+                <section>
+                    <p class="head-icon-p">
+                        <a href="https://www.facebook.com/share/1AuPANXpeZ/" target="_blank">
+                            <i class="h-icon fab fa-facebook"></i>
+                        </a>
+                        <a href="https://www.instagram.com/m.qasim_waheed?igsh=ZDhiNXFwM3RjajBz" target="_blank">
+                            <i class="h-icon fab fa-instagram"></i>
+                        </a>
+                        <a href="https://x.com/Qasimwa69183452?t=wgonm6bvfrxXdvW1FfpW9A&s=09" target="_blank">
+                            <i class="h-icon fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/muhammad-qasim-80a7aa28b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
+                            <i class="h-icon fab fa-linkedin"></i>
+                        </a>
+                    </p>
+                </section>
+                <p class="footer-text">Welcome! I'm Muhammad Qasim, a passionate Frontend Developer who loves bringing ideas to life through code.</p>
+            </div>
+            <div class="Services-footer">
+                <p class="footer-h">Services</p>
+                <p class="footer-t">UI/UX</p>
+                <p class="footer-t">App Development</p>
+                <p class="footer-t">Web Development</p>
+                <p class="footer-t">Web Design</p>
+            </div>
+            <div>
+                <p class="footer-h-2">Quick Link</p>
+                <a class="footer-t-2" href="#my-home">Home</a><br>
+                <a class="footer-t-2" href="#about-me">About</a><br>
+                <a class="footer-t-2" href="#my-services">Services</a><br>
+                <a class="footer-t-2" href="#my-contact">Contact Me</a>
+            </div>
+            <div class="icon-sec">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="footer-icon">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                </svg>
+                <p class="icon-t">Lahore, Pakistan</p>
+                <br>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="footer-icon">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                </svg>
+                <p class="icon-t">qasimwaheed987@gmail.com</p>
+                <br>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="footer-icon">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 3.75v4.5m0-4.5h-4.5m4.5 0l-6 6m3 12c-8.284 0-15-6.716-15-15V4.5A2.25 2.25 0 014.5 2.25h1.372c.516 0 .966.351 1.091.852l1.106 4.423c.11.44-.054.902-.417 1.173l-1.293.97a1.062 1.062 0 00-.38 1.21 12.035 12.035 0 007.143 7.143c.441.162.928-.004 1.21-.38l.97-1.293a1.125 1.125 0 011.173-.417l4.423 1.106c.5.125.852.575.852 1.091V19.5a2.25 2.25 0 01-2.25 2.25h-2.25z" />
+                </svg>
+                <p class="icon-t">03240442269</p>
+            </div>
+        </div>
+        <div class="all-rights">
+            <p class="rights-text">© 2025 Muhammad Qasim. All Rights Reserved.</p>
+        </div>
+    </section>
+</div>
+    <script>
+        function toggleNav() {
+            const nav = document.getElementById("headerNav");
+            nav.classList.toggle("active");
+        }
+    </script>
+</body>
+</html>
